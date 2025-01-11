@@ -21,8 +21,22 @@ local function notify(text, button1, button2, callback)
     G2L["3"].Text = text
     G2L["3"].Position = UDim2.new(0, 0, 0, 0)
 
-G2L["4"] = Instance.new("UIGradient", G2L["3"]);
-G2L["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 255, 0)),ColorSequenceKeypoint.new(0.125, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.190, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.215, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.221, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.398, Color3.fromRGB(5, 251, 0)),ColorSequenceKeypoint.new(0.701, Color3.fromRGB(252, 4, 0)),ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.886, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.888, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.907, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 0, 0))};
+    G2L["4"] = Instance.new("UIGradient", G2L["3"])
+    G2L["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 255, 0)),
+        ColorSequenceKeypoint.new(0.125, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.190, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.215, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.221, Color3.fromRGB(1, 255, 0)),
+        ColorSequenceKeypoint.new(0.398, Color3.fromRGB(5, 251, 0)),
+        ColorSequenceKeypoint.new(0.701, Color3.fromRGB(252, 4, 0)),
+        ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),
+        ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),
+        ColorSequenceKeypoint.new(0.886, Color3.fromRGB(255, 1, 0)),
+        ColorSequenceKeypoint.new(0.888, Color3.fromRGB(255, 1, 0)),
+        ColorSequenceKeypoint.new(0.907, Color3.fromRGB(255, 1, 0)),
+        ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 0, 0))}
 
     G2L["5"] = Instance.new("TextButton", G2L["2"])
     G2L["5"].BorderSizePixel = 0
