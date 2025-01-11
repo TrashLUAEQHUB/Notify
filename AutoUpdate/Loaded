@@ -1,0 +1,61 @@
+local function notify(text, button1, button2, callback)
+    local G2L = {}
+
+    G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
+    G2L["1"].Name = "Notify"
+
+    G2L["2"] = Instance.new("Frame", G2L["1"])
+    G2L["2"].BorderSizePixel = 0
+    G2L["2"].BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    G2L["2"].Size = UDim2.new(0, 504, 0, 259)
+    G2L["2"].Position = UDim2.new(0.368, 0, 0.340, 0)
+    G2L["2"].Name = "Question"
+
+    G2L["3"] = Instance.new("TextLabel", G2L["2"])
+    G2L["3"].BorderSizePixel = 0
+    G2L["3"].BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    G2L["3"].Font = Enum.Font.SourceSansBold
+    G2L["3"].TextSize = 19
+    G2L["3"].TextColor3 = Color3.fromRGB(255, 255, 255)
+    G2L["3"].Size = UDim2.new(0, 504, 0, 224)
+    G2L["3"].Text = text
+    G2L["3"].Position = UDim2.new(0, 0, 0, 0)
+
+G2L["4"] = Instance.new("UIGradient", G2L["3"]);
+G2L["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 255, 0)),ColorSequenceKeypoint.new(0.125, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.135, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.190, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.215, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.221, Color3.fromRGB(1, 255, 0)),ColorSequenceKeypoint.new(0.398, Color3.fromRGB(5, 251, 0)),ColorSequenceKeypoint.new(0.701, Color3.fromRGB(252, 4, 0)),ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.863, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.886, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.888, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(0.907, Color3.fromRGB(255, 1, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 0, 0))};
+
+    G2L["5"] = Instance.new("TextButton", G2L["2"])
+    G2L["5"].BorderSizePixel = 0
+    G2L["5"].BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    G2L["5"].TextSize = 14
+    G2L["5"].Font = Enum.Font.SourceSans
+    G2L["5"].TextColor3 = Color3.fromRGB(0, 0, 0)
+    G2L["5"].Size = UDim2.new(0, 200, 0, 21)
+    G2L["5"].Text = button1
+    G2L["5"].Position = UDim2.new(0.0179, 0, 0.8919, 0)
+
+    G2L["7"] = Instance.new("TextButton", G2L["2"])
+    G2L["7"].BorderSizePixel = 0
+    G2L["7"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    G2L["7"].TextSize = 14
+    G2L["7"].Font = Enum.Font.SourceSans
+    G2L["7"].TextColor3 = Color3.fromRGB(0, 0, 0)
+    G2L["7"].Size = UDim2.new(0, 200, 0, 21)
+    G2L["7"].Text = button2
+    G2L["7"].Position = UDim2.new(0.579, 0, 0.8919, 0)
+
+    local function button1Clicked()
+        callback(true)  
+        G2L["1"]:Destroy() 
+    end
+
+    local function button2Clicked()
+        callback(false) 
+        G2L["1"]:Destroy() 
+    end
+
+    G2L["5"].MouseButton1Click:Connect(button1Clicked) 
+    G2L["7"].MouseButton1Click:Connect(button2Clicked)  
+
+    return G2L["1"] 
+end
